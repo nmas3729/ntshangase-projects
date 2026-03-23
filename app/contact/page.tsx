@@ -44,7 +44,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-bold text-gray-900 mb-2">Phone</h3>
                     <a href="tel:0760961850" className="text-red-600 hover:text-red-700 font-semibold text-lg">
-                      076 0961 850
+                      076 096 1850
                     </a>
                     <p className="text-gray-600 mt-1">Call us during business hours</p>
                   </div>

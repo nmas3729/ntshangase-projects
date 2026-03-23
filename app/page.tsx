@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function Home() {
-  const phone = "2760961850"; // the actual business line string is kept here.
+  const phone = "27760961850"; // the actual business line string is kept here.
   const [logoFailed, setLogoFailed] = useState(false);
   const [modalImageSrc, setModalImageSrc] = useState<string | null>(null);
   const [modalVideoSrc, setModalVideoSrc] = useState<string | null>(null);
@@ -284,6 +284,9 @@ export default function Home() {
                 { src: "/images/work7.jpeg", alt: "Installation Project 7" },
                 { src: "/images/work8.jpeg", alt: "Installation Project 8" },
                 { src: "/images/work9.jpeg", alt: "Installation Project 9" },
+                { src: "/images/work10.jpeg", alt: "Installation Project 10" },
+                { src: "/images/work11.jpeg", alt: "Installation Project 11" },
+                { src: "/images/work12.jpeg", alt: "Installation Project 12" },
               ].map((img, i) => (
                 <div 
                   key={i} 
