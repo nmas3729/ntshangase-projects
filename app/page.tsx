@@ -106,7 +106,7 @@ export default function Home() {
             <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 mt-2">
               {[
                 { name: "CCTV", icon: "📹", desc: "Reliable & Professional" },
-                { name: "Garage Doors", icon: "🚪", desc: "Reliable & Professional" },
+                { name: "Garage Doors", icon: "/images/garage-door.png", desc: "Reliable & Professional", isImage: true },
                 { name: "Gate Motors", icon: "⚙️", desc: "Reliable & Professional" },
                 { name: "Electric Fence", icon: "⚡", desc: "Reliable & Professional" },
                 { name: "Solar", icon: "☀️", desc: "Reliable & Professional" },
@@ -116,7 +116,13 @@ export default function Home() {
                   key={s.name}
                   className="bg-white rounded-[28px] p-[18px_20px] flex items-center gap-[18px] shadow-[0_8px_18px_rgba(0,0,0,0.05)] border border-[#FFCCCC] active:scale-[0.99] transition-transform"
                 >
-                  <div className="text-[2.5rem] w-[58px] text-center">{s.icon}</div>
+                  <div className="w-[58px] text-center">
+                    {s.isImage ? (
+                      <img src={s.icon as string} alt={s.name} className="w-[58px] h-[58px] object-contain" />
+                    ) : (
+                      <div className="text-[2.5rem]">{s.icon}</div>
+                    )}
+                  </div>
                   <div>
                     <h3 className="text-[1.3rem] font-bold mb-1 text-[#CC0000]">{s.name}</h3>
                     <p className="text-[#666666] font-medium text-[0.8rem]">
@@ -309,19 +315,31 @@ export default function Home() {
               Before & After Installation
             </h3>
             <div className="flex gap-3 mt-3">
-              <div className="flex-1 bg-[#FFF5F5] rounded-[20px] p-[18px_8px] text-center">
-                <i className="fas fa-image text-[2rem] text-[#CC0000] mb-2 block"></i>
-                <h4 className="font-extrabold mb-[6px] text-[#CC0000]">Before</h4>
-                <p className="text-[0.75rem] text-gray-500">
-                  Before installation
-                </p>
+              <div className="flex-1">
+                <div
+                  className="rounded-[20px] overflow-hidden aspect-square bg-[#F5F5F5] shadow-[0_2px_8px_rgba(0,0,0,0.05)] cursor-pointer"
+                  onClick={() => setModalImageSrc("/images/before1.jpeg")}
+                >
+                  <img
+                    src="/images/before1.jpeg"
+                    alt="Before Installation"
+                    className="w-full h-full object-cover block transition-transform duration-200 active:scale-105"
+                  />
+                </div>
+                <h4 className="font-extrabold mt-2 text-[#CC0000] text-center">Before</h4>
               </div>
-              <div className="flex-1 bg-[#FFF5F5] rounded-[20px] p-[18px_8px] text-center">
-                <i className="fas fa-check-double text-[2rem] text-[#CC0000] mb-2 block"></i>
-                <h4 className="font-extrabold mb-[6px] text-[#CC0000]">After</h4>
-                <p className="text-[0.75rem] text-gray-500">
-                  After installation
-                </p>
+              <div className="flex-1">
+                <div
+                  className="rounded-[20px] overflow-hidden aspect-square bg-[#F5F5F5] shadow-[0_2px_8px_rgba(0,0,0,0.05)] cursor-pointer"
+                  onClick={() => setModalImageSrc("/images/after1.jpeg")}
+                >
+                  <img
+                    src="/images/after1.jpeg"
+                    alt="After Installation"
+                    className="w-full h-full object-cover block transition-transform duration-200 active:scale-105"
+                  />
+                </div>
+                <h4 className="font-extrabold mt-2 text-[#CC0000] text-center">After</h4>
               </div>
             </div>
             <p className="text-[0.8rem] text-center mt-3 text-gray-700">
