@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -29,6 +30,14 @@ export default function RootLayout({
     >
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-LVYN6KPQ0V"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">{`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LVYN6KPQ0V');`}</Script>
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
